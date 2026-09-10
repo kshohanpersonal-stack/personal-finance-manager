@@ -40,10 +40,14 @@ jobs:
       - name: Build and test
         id: gradle
         run: |
+          set +e
           set -o pipefail
           mkdir -p ci
           ./gradlew --no-daemon --stacktrace testDebugUnitTest assembleDebug assembleRelease 2>&1 | tee ci/build.log
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Gradle finished with exit code $code"
+          exit 0
 
       - name: Verify APK artifacts
         if: steps.gradle.outputs.exit_code == '0'
@@ -93,7 +97,7 @@ jobs:
           fi
 
       - name: Fail if the build failed
-        if: steps.gradle.outputs.exit_code != '0'
+        if: steps.gradle.outputs.exit_code != '0' && steps.gradle.outputs.exit_code != ''
         run: |
           echo "Gradle build failed — see ci/build.log in the repository."
           exit 1

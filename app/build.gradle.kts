@@ -1,7 +1,7 @@
 plugins {
-    alias(libs.plugins.android-application)
-    alias(libs.plugins.kotlin-android)
-    alias(libs.plugins.kotlin-compose)
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kotlinCompose)
     alias(libs.plugins.ksp)
 }
 
@@ -61,33 +61,32 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx-core-ktx)
-    implementation(libs.androidx-core-splashscreen)
-    implementation(libs.androidx-activity-compose)
-    implementation(libs.androidx-lifecycle-runtime-ktx)
-    implementation(libs.androidx-lifecycle-viewmodel-compose)
-    implementation(libs.androidx-lifecycle-process)
-    implementation(libs.androidx-navigation-compose)
-    implementation(libs.androidx-biometric)
-    implementation(libs.androidx-work-runtime-ktx)
-    implementation(libs.kotlinx-coroutines-android)
+    implementation(libs.androidxCoreKtx)
+    implementation(libs.androidxCoreSplashscreen)
+    implementation(libs.androidxActivityCompose)
+    implementation(libs.androidxLifecycleRuntime)
+    implementation(libs.androidxLifecycleViewModelCompose)
+    implementation(libs.androidxNavigationCompose)
+    implementation(libs.androidxBiometric)
+    implementation(libs.androidxWorkRuntime)
+    implementation(libs.kotlinxCoroutinesAndroid)
 
-    implementation(platform(libs.androidx-compose-bom))
-    implementation(libs.androidx-compose-ui)
-    implementation(libs.androidx-compose-ui-graphics)
-    implementation(libs.androidx-compose-ui-tooling-preview)
-    implementation(libs.androidx-compose-material3)
-    implementation(libs.androidx-compose-material-icons-extended)
+    implementation(platform(libs.androidxComposeBom))
+    implementation(libs.androidxComposeUi)
+    implementation(libs.androidxComposeUiGraphics)
+    implementation(libs.androidxComposeUiToolingPreview)
+    implementation(libs.androidxComposeMaterial3)
+    implementation(libs.androidxComposeMaterialIconsExtended)
 
-    implementation(libs.androidx-room-runtime)
-    implementation(libs.androidx-room-ktx)
-    ksp(libs.androidx-room-compiler)
+    implementation(libs.androidxRoomRuntime)
+    implementation(libs.androidxRoomKtx)
+    ksp(libs.androidxRoomCompiler)
 
-    implementation(libs.androidx-datastore-preferences)
+    implementation(libs.androidxDatastorePreferences)
 
-    debugImplementation(libs.androidx-compose-ui-tooling)
+    debugImplementation(libs.androidxComposeUiTooling)
 
     testImplementation(libs.junit)
-    testImplementation(libs.kotlinx-coroutines-test)
+    testImplementation(libs.kotlinxCoroutinesTest)
     testImplementation(libs.json)
 }
