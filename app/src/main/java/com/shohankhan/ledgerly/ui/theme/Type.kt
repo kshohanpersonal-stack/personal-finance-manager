@@ -4,7 +4,6 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.sp
 
 private val LedgerlyFont = FontFamily.Default
@@ -121,15 +120,4 @@ val LedgerlyTypography = Typography(
             lineHeight = 14.sp
         )
     )
-)
-
-/** Numbers that must never visually jump while animating. */
-val NumericTextStyle = TextStyle(
-    fontFamily = LedgerlyFont,
-    fontWeight = FontWeight.Bold,
-    lineHeightStyle = LineHeightStyle(
-        alignment = LineHeightStyle.Alignment.Center,
-        trim = LineHeightStyle.Trim.BothEdges
-    ),
-    fontFeatureSettings = "tnum"
 )
