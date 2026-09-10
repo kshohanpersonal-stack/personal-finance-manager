@@ -82,6 +82,7 @@ jobs:
           fi
           git config user.name "arena-ai-coding-agent[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          touch ci/build.log artifacts/.gitkeep
           git add -f artifacts ci
           if git diff --cached --quiet; then
             echo "nothing to publish"
