@@ -9,3 +9,5 @@
 .cxx
 local.properties
 .kotlin
+# CI build log is published to the branch by design, but never committed by hand.
+ci/
